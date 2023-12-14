@@ -12,23 +12,28 @@ export class IngredientCard {
 
   render() {
     //const { targetUrl, name, imageSrc } = this;
-    const { name, targetUrl } = this;
+    const { name, targetUrl, imageSrc } = this;
     document.documentElement.style.setProperty(
       "--custom-bg-image",
-      "url(" + targetUrl + ")"
+      "url(" + imageSrc + ")"
     );
+    console.log();
+
+    var style = document.createElement("style");
+    var newClass = name.replace(/[^A-Z0-9]/gi, "");
+    var classeNames = "bg_image " + newClass;
+    style.innerHTML =
+      "." + newClass + " {   background-image: url(" + imageSrc + ");}";
+    document.getElementsByTagName("head")[0].appendChild(style);
 
     return (
       <Host>
-        <section class="bg_image">
-          <p>{name}</p>
-        </section>
+        <a href={"ingredient/" + targetUrl + "/recipes"}>
+          <section class={classeNames}>
+            <p>{name}</p>
+          </section>
+        </a>
       </Host>
     );
   }
 }
-/*<img class="photo" src={imageSrc} alt={"picture of " + name}></img>
-        <p class="name">{name}</p>*/
-/* <a href={targetUrl} class="container">
-          <p class="name">{name}</p>
-        </a>*/

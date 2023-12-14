@@ -1,5 +1,11 @@
 import { Component, h, Host, Prop, State, Watch } from "@stencil/core";
 
+interface Ingredient {
+  id: string;
+  name: string;
+  image: string;
+}
+
 @Component({
   tag: "ingredient-grid",
   styleUrl: "ingredient-grid.scss",
@@ -7,7 +13,7 @@ import { Component, h, Host, Prop, State, Watch } from "@stencil/core";
 })
 export class IngredientGrid {
   @Prop() ingredients: string;
-  @State() internalIngredients: string[];
+  @State() internalIngredients: Ingredient[];
 
   @Watch("ingredients")
   parseIngredients() {
@@ -27,9 +33,9 @@ export class IngredientGrid {
         {internalIngredients.map((ingredient) => {
           return (
             <ingredient-card
-              target-url="https://i.notretemps.com/1400x787/smart/2015/10/05/poisson-thon.jpg"
-              name={ingredient}
-              image-src="https://www.willemsefrance.fr/cdn/shop/products/HOR_276_1.jpg?v=1682493560"
+              target-url={ingredient.id}
+              name={ingredient.name}
+              image-src={ingredient.image}
             ></ingredient-card>
           );
         })}
