@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css?family=Bowlby+One+SC");
+
+:root {
+  --custom-bg-image: url("https://st.depositphotos.com/2935381/4189/i/450/depositphotos_41897159-stock-photo-example-concept.jpg");
+}
+
+ingredient-card {
+  border-radius: 1rem;
+  display: grid;
+  box-sizing: border-box;
+  max-width: 20rem;
+}
+
+img {
+  border-radius: 1rem;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+p {
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 1.5rem;
+  margin-top: -0.08rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.bg_image {
+  background-image: var(--custom-bg-image);
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  color: #fff;
+  border-radius: 1rem;
+  text-align: center;
+  min-height: 15rem;
+}
