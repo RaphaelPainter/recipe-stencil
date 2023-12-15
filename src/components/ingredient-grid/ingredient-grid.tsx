@@ -1,11 +1,16 @@
 import { Component, h, Host, Prop, State, Watch } from "@stencil/core";
-import { Ingredient } from "./ingredient.mode";
 
 @Component({
   tag: "ingredient-grid",
   styleUrl: "ingredient-grid.scss",
   shadow: false,
 })
+export class Ingredient {
+  id: string;
+  name: string;
+  image: string;
+}
+
 export class IngredientGrid {
   @Prop() ingredients: string;
   @State() internalIngredients: Ingredient[];
