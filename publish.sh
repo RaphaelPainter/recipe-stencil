@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version="4.0.2"
+version="4.0.3"
 npm i
 npm version $version
 git add .
