@@ -1,10 +1,6 @@
 import { Component, h, Host, Prop, State, Watch } from "@stencil/core";
 
-export interface Ingredient {
-  id: string;
-  name: string;
-  image: string;
-}
+import { Components } from "./../../components";
 
 @Component({
   tag: "ingredient-grid",
@@ -13,7 +9,7 @@ export interface Ingredient {
 })
 export class IngredientGrid {
   @Prop() ingredients: string;
-  @State() internalIngredients: Ingredient[];
+  @State() internalIngredients: Components.Ingredient[];
 
   @Watch("ingredients")
   parseIngredients() {
