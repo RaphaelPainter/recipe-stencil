@@ -1,10 +1,5 @@
 import { Component, h, Host, Prop, State, Watch } from "@stencil/core";
-
-interface Ingredient {
-  id: string;
-  name: string;
-  image: string;
-}
+import { Ingredient } from "recipe-front-model";
 
 @Component({
   tag: "ingredient-grid",
