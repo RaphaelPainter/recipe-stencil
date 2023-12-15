@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version="4.0.9"
+version="4.0.10"
 npm i
 git add .
 git commit -m "update to version $version"
