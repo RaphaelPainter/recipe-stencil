@@ -6,62 +6,66 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-  interface IngredientCard {
-    imageSrc: string;
-    name: string;
-    targetUrl: string;
-  }
-  interface IngredientGrid {
-    ingredients: string;
-  }
-  export interface Ingredient {
-    id: string;
-    name: string;
-    image: string;
-  }
+    interface IngredientCard {
+        "imageSrc": string;
+        "name": string;
+        "targetUrl": string;
+    }
+    interface IngredientGrid {
+        "ingredients": string;
+    }
+    interface ModelIngredient {
+    }
 }
 declare global {
-  interface HTMLIngredientCardElement
-    extends Components.IngredientCard,
-      HTMLStencilElement {}
-  var HTMLIngredientCardElement: {
-    prototype: HTMLIngredientCardElement;
-    new (): HTMLIngredientCardElement;
-  };
-  interface HTMLIngredientGridElement
-    extends Components.IngredientGrid,
-      HTMLStencilElement {}
-  var HTMLIngredientGridElement: {
-    prototype: HTMLIngredientGridElement;
-    new (): HTMLIngredientGridElement;
-  };
-  interface HTMLElementTagNameMap {
-    "ingredient-card": HTMLIngredientCardElement;
-    "ingredient-grid": HTMLIngredientGridElement;
-  }
+    interface HTMLIngredientCardElement extends Components.IngredientCard, HTMLStencilElement {
+    }
+    var HTMLIngredientCardElement: {
+        prototype: HTMLIngredientCardElement;
+        new (): HTMLIngredientCardElement;
+    };
+    interface HTMLIngredientGridElement extends Components.IngredientGrid, HTMLStencilElement {
+    }
+    var HTMLIngredientGridElement: {
+        prototype: HTMLIngredientGridElement;
+        new (): HTMLIngredientGridElement;
+    };
+    interface HTMLModelIngredientElement extends Components.ModelIngredient, HTMLStencilElement {
+    }
+    var HTMLModelIngredientElement: {
+        prototype: HTMLModelIngredientElement;
+        new (): HTMLModelIngredientElement;
+    };
+    interface HTMLElementTagNameMap {
+        "ingredient-card": HTMLIngredientCardElement;
+        "ingredient-grid": HTMLIngredientGridElement;
+        "model-ingredient": HTMLModelIngredientElement;
+    }
 }
 declare namespace LocalJSX {
-  interface IngredientCard {
-    imageSrc?: string;
-    name?: string;
-    targetUrl?: string;
-  }
-  interface IngredientGrid {
-    ingredients?: string;
-  }
-  interface IntrinsicElements {
-    "ingredient-card": IngredientCard;
-    "ingredient-grid": IngredientGrid;
-  }
+    interface IngredientCard {
+        "imageSrc"?: string;
+        "name"?: string;
+        "targetUrl"?: string;
+    }
+    interface IngredientGrid {
+        "ingredients"?: string;
+    }
+    interface ModelIngredient {
+    }
+    interface IntrinsicElements {
+        "ingredient-card": IngredientCard;
+        "ingredient-grid": IngredientGrid;
+        "model-ingredient": ModelIngredient;
+    }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
-  export namespace JSX {
-    interface IntrinsicElements {
-      "ingredient-card": LocalJSX.IngredientCard &
-        JSXBase.HTMLAttributes<HTMLIngredientCardElement>;
-      "ingredient-grid": LocalJSX.IngredientGrid &
-        JSXBase.HTMLAttributes<HTMLIngredientGridElement>;
+    export namespace JSX {
+        interface IntrinsicElements {
+            "ingredient-card": LocalJSX.IngredientCard & JSXBase.HTMLAttributes<HTMLIngredientCardElement>;
+            "ingredient-grid": LocalJSX.IngredientGrid & JSXBase.HTMLAttributes<HTMLIngredientGridElement>;
+            "model-ingredient": LocalJSX.ModelIngredient & JSXBase.HTMLAttributes<HTMLModelIngredientElement>;
+        }
     }
-  }
 }

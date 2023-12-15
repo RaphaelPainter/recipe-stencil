@@ -1,6 +1,5 @@
 import { Component, h, Host, Prop, State, Watch } from "@stencil/core";
-
-import { Components } from "./../../components";
+import { Ingredient } from "./ingredient.mode";
 
 @Component({
   tag: "ingredient-grid",
@@ -9,7 +8,7 @@ import { Components } from "./../../components";
 })
 export class IngredientGrid {
   @Prop() ingredients: string;
-  @State() internalIngredients: Components.Ingredient[];
+  @State() internalIngredients: Ingredient[];
 
   @Watch("ingredients")
   parseIngredients() {
