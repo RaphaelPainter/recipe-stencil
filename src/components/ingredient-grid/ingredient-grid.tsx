@@ -5,7 +5,7 @@ import { Component, h, Host, Prop, State, Watch } from "@stencil/core";
   styleUrl: "ingredient-grid.scss",
   shadow: false,
 })
-export class Ingredient {
+class Ingredient {
   id: string;
   name: string;
   image: string;
