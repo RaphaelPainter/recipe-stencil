@@ -1,10 +1,10 @@
 #!/bin/bash
 
-version="4.0.4"
+version="4.0.5"
 npm i
-npm version $version
 git add .
 git commit -m "update to version $version"
+npm version $version
 git push
 sleep 10
 npm run build
