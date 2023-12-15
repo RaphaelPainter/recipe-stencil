@@ -1,6 +1,6 @@
 import { Component, h, Host, Prop, State, Watch } from "@stencil/core";
 
-interface Ingredient {
+export interface Ingredient {
   id: string;
   name: string;
   image: string;
