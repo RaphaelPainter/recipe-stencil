@@ -1,6 +1,6 @@
 {
   "name": "acme-components-sample-shirzooa",
-  "version": "4.1.0",
+  "version": "4.1.1",
   "description": "Acme Component sample library using stencil.js",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",
