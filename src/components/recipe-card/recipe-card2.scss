@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Bowlby+One+SC");
 
-ingredient-card {
+recipe-card {
   border-radius: 1rem;
   display: grid;
   box-sizing: border-box;
@@ -14,7 +14,7 @@ img {
   object-fit: contain;
 }
 
-.ingredient-name {
+.recipe-name {
   background: rgba(0, 0, 0, 0.6);
   color: white;
   font-size: 1.3rem;

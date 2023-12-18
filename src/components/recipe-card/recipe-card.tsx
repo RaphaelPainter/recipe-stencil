@@ -1,11 +1,11 @@
 import { Component, h, Host, Prop } from "@stencil/core";
 
 @Component({
-  tag: "ingredient-card",
-  styleUrl: "ingredient-card2.scss",
+  tag: "recipe-card",
+  styleUrl: "recipe-card2.scss",
   shadow: false,
 })
-export class IngredientCard {
+export class RecipeCard {
   @Prop() targetUrl: string;
   @Prop() name: string;
   @Prop() imageSrc: string;
@@ -28,9 +28,9 @@ export class IngredientCard {
 
     return (
       <Host>
-        <a href={"ingredient/" + targetUrl + "/recipes"}>
+        <a href={"recipe/" + targetUrl}>
           <section class={classeNames}>
-            <p class="ingredient-name">{name}</p>
+            <p class="recipe-name">{name}</p>
           </section>
         </a>
       </Host>

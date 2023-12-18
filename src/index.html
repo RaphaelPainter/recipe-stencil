@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-<title>Stencil Component Starter</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
 
-<style>
-  body {
-    background-color: #ffffff;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1rem;
-  }
+    <style>
+      body {
+        background-color: #ffffff;
+        font-family: "Open Sans", sans-serif;
+        font-size: 1rem;
+      }
 
-   .global-red {
-     color: red;
-   }
-</style>
+      .global-red {
+        color: red;
+      }
+    </style>
 
+    <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
 
-<script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
-
-<script type="module" src="/build/acme-components-sample.esm.js"></script>
-<script nomodule src="/build/acme-components-sample.js"></script>
-</head>
-<body>
-   <!--<ingredient-card target-url="https://google.com" name="Betterave rouge de Garonne"
+    <script type="module" src="/build/acme-components-sample.esm.js"></script>
+    <script nomodule src="/build/acme-components-sample.js"></script>
+  </head>
+  <body>
+    <!--<ingredient-card target-url="https://google.com" name="Betterave rouge de Garonne"
                        image-src="https://www.willemsefrance.fr/cdn/shop/products/HOR_276_1.jpg?v=1682493560" ></ingredient-card>
                       -->
 
-     <ingredient-grid ingredients='[
+    <ingredient-grid
+      ingredients='[
     {
         "id": "450e8400-e29b-41d4-a716-446655440000",
         "name": "Betterave rouge de Garonne",
@@ -50,7 +53,53 @@
         "season_end": 12,
         "image": "https://resize.prod.docfr.doc-media.fr/s/1200/ext/eac4ff34/content/2022/7/5/brocoli-1000fdace663fd2b.jpeg"
     }
-]'></ingredient-grid>                 
+]'
+    ></ingredient-grid>
 
-</body>
+    <recipe-grid
+      recipes='[
+    {
+        "id": "450e8400-e29b-41d4-a716-446655440462",
+        "name": "Gratin de brocolis facile",
+        "cooks_fk": {
+            "id": "450e8400-e29b-41d4-a716-446655440020",
+            "name": "Super chef"
+        },
+        "description": "ÉTAPE 1\nFaire bouillir un fond d eau légèrement salée dans une grande casserole.\n\nÉTAPE 2\nPlonger les brocolis, couvrir et laisser cuire à feu doux. Battre les 2 oeufs dans un grand bol, ajouter la crème, le sel, le poivre et la noix de muscade. Mélanger.\n\nÉTAPE 3\nAjouter les 2 tranches de jambon préalablement coupées en petits morceaux ainsi que le tiers du fromage râpé. Mélanger le tout.\n\nÉTAPE 4\nLorsque les brocolis sont tendres, les égoutter le plus possible. Préchauffer le four (180°C). Faire chauffer un fond d huile dans la casserole et y mettre l oignon haché grossièrement. Faire revenir à feu très doux et ne pas faire brunir !\n\nÉTAPE 5\nY ajouter les deux gousses d ail pressées et les brocolis. Assaisonner légèrement et bien mélanger.\n\nÉTAPE 6\nVerser le contenu de la casserole dans un plat à gratin, bien étaler. Verser le mélange d oeufs, étaler le tout de façon uniforme.\n\nÉTAPE 7\nSaupoudrer de chapelure et du restant de gruyère râpé. Mettre le plat au four, toujours sur 180°C et laisser cuire pendant entre 30 et 45 min.\n\nÉTAPE 8\nVérifier la cuisson de temps en temps... L ensemble doit être (en fin de cuisson) assez dense, un peu comme une grosse omelette.",
+        "image": "https://assets.afcdn.com/recipe/20120824/22181_w600.jpg",
+        "ingredients": [
+            {
+                "id": "450e8400-e29b-41d4-a716-446655440002",
+                "name": "Brocoli",
+                "season_start": 9,
+                "season_end": 12,
+                "image": "https://resize.prod.docfr.doc-media.fr/s/1200/ext/eac4ff34/content/2022/7/5/brocoli-1000fdace663fd2b.jpeg"
+            }
+        ]
+    }
+]'
+    ></recipe-grid>
+    <recipe-detail
+      recipe='{
+        "id": "450e8400-e29b-41d4-a716-446655440462",
+        "name": "Gratin de brocolis facile",
+        "cooks_fk": {
+            "id": "450e8400-e29b-41d4-a716-446655440020",
+            "name": "Super chef"
+        },
+        "description": "ÉTAPE 1\nFaire bouillir un fond d eau légèrement salée dans une grande casserole.\n\nÉTAPE 2\nPlonger les brocolis, couvrir et laisser cuire à feu doux. Battre les 2 oeufs dans un grand bol, ajouter la crème, le sel, le poivre et la noix de muscade. Mélanger.\n\nÉTAPE 3\nAjouter les 2 tranches de jambon préalablement coupées en petits morceaux ainsi que le tiers du fromage râpé. Mélanger le tout.\n\nÉTAPE 4\nLorsque les brocolis sont tendres, les égoutter le plus possible. Préchauffer le four (180°C). Faire chauffer un fond d huile dans la casserole et y mettre l oignon haché grossièrement. Faire revenir à feu très doux et ne pas faire brunir !\n\nÉTAPE 5\nY ajouter les deux gousses d ail pressées et les brocolis. Assaisonner légèrement et bien mélanger.\n\nÉTAPE 6\nVerser le contenu de la casserole dans un plat à gratin, bien étaler. Verser le mélange d oeufs, étaler le tout de façon uniforme.\n\nÉTAPE 7\nSaupoudrer de chapelure et du restant de gruyère râpé. Mettre le plat au four, toujours sur 180°C et laisser cuire pendant entre 30 et 45 min.\n\nÉTAPE 8\nVérifier la cuisson de temps en temps... L ensemble doit être (en fin de cuisson) assez dense, un peu comme une grosse omelette.",
+        "image": "https://assets.afcdn.com/recipe/20120824/22181_w600.jpg",
+        "ingredients": [
+            {
+                "id": "450e8400-e29b-41d4-a716-446655440002",
+                "name": "Brocoli",
+                "season_start": 9,
+                "season_end": 12,
+                "image": "https://resize.prod.docfr.doc-media.fr/s/1200/ext/eac4ff34/content/2022/7/5/brocoli-1000fdace663fd2b.jpeg"
+            }
+        ]
+    }'
+    >
+    </recipe-detail>
+  </body>
 </html>

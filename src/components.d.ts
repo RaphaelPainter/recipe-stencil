@@ -14,6 +14,17 @@ export namespace Components {
     interface IngredientGrid {
         "ingredients": string;
     }
+    interface RecipeCard {
+        "imageSrc": string;
+        "name": string;
+        "targetUrl": string;
+    }
+    interface RecipeDetail {
+        "recipe": string;
+    }
+    interface RecipeGrid {
+        "recipes": string;
+    }
 }
 declare global {
     interface HTMLIngredientCardElement extends Components.IngredientCard, HTMLStencilElement {
@@ -28,9 +39,30 @@ declare global {
         prototype: HTMLIngredientGridElement;
         new (): HTMLIngredientGridElement;
     };
+    interface HTMLRecipeCardElement extends Components.RecipeCard, HTMLStencilElement {
+    }
+    var HTMLRecipeCardElement: {
+        prototype: HTMLRecipeCardElement;
+        new (): HTMLRecipeCardElement;
+    };
+    interface HTMLRecipeDetailElement extends Components.RecipeDetail, HTMLStencilElement {
+    }
+    var HTMLRecipeDetailElement: {
+        prototype: HTMLRecipeDetailElement;
+        new (): HTMLRecipeDetailElement;
+    };
+    interface HTMLRecipeGridElement extends Components.RecipeGrid, HTMLStencilElement {
+    }
+    var HTMLRecipeGridElement: {
+        prototype: HTMLRecipeGridElement;
+        new (): HTMLRecipeGridElement;
+    };
     interface HTMLElementTagNameMap {
         "ingredient-card": HTMLIngredientCardElement;
         "ingredient-grid": HTMLIngredientGridElement;
+        "recipe-card": HTMLRecipeCardElement;
+        "recipe-detail": HTMLRecipeDetailElement;
+        "recipe-grid": HTMLRecipeGridElement;
     }
 }
 declare namespace LocalJSX {
@@ -42,9 +74,23 @@ declare namespace LocalJSX {
     interface IngredientGrid {
         "ingredients"?: string;
     }
+    interface RecipeCard {
+        "imageSrc"?: string;
+        "name"?: string;
+        "targetUrl"?: string;
+    }
+    interface RecipeDetail {
+        "recipe"?: string;
+    }
+    interface RecipeGrid {
+        "recipes"?: string;
+    }
     interface IntrinsicElements {
         "ingredient-card": IngredientCard;
         "ingredient-grid": IngredientGrid;
+        "recipe-card": RecipeCard;
+        "recipe-detail": RecipeDetail;
+        "recipe-grid": RecipeGrid;
     }
 }
 export { LocalJSX as JSX };
@@ -53,6 +99,9 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "ingredient-card": LocalJSX.IngredientCard & JSXBase.HTMLAttributes<HTMLIngredientCardElement>;
             "ingredient-grid": LocalJSX.IngredientGrid & JSXBase.HTMLAttributes<HTMLIngredientGridElement>;
+            "recipe-card": LocalJSX.RecipeCard & JSXBase.HTMLAttributes<HTMLRecipeCardElement>;
+            "recipe-detail": LocalJSX.RecipeDetail & JSXBase.HTMLAttributes<HTMLRecipeDetailElement>;
+            "recipe-grid": LocalJSX.RecipeGrid & JSXBase.HTMLAttributes<HTMLRecipeGridElement>;
         }
     }
 }
