@@ -10,7 +10,7 @@ export class RecipeGrid {
   @Prop() recipes: string;
   @State() internalRecipes: Recipe[];
 
-  @Watch("ingredients")
+  @Watch("recipes")
   parseIngredients() {
     if (this.recipes) {
       this.internalRecipes = JSON.parse(this.recipes);
